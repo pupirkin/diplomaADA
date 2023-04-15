@@ -1,7 +1,7 @@
  console.log('App working...')
 
 
- // выползание окошечка лог/рег 
+ // выползание окошечка лог/рег
  var wrapper = document.getElementById('wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -11,7 +11,15 @@ const pw = document.querySelector('.page_wrapper');
 console.log(document);
 const btnPopup = document.querySelector('.hih');
 const iconClose = document.querySelector('.icon-close');
-console.log(btnPopup);
+
+const btnPopup1 = document.querySelector('.hih1');
+btnPopup1.addEventListener( 'click', ()=> {
+  console.log("hi");
+  wrapper.classList.add( 'active-popup');
+  bg.classList.add( 'active');
+  pw.classList.add( 'active');
+});
+
 registerLink.addEventListener( 'click', ()=> {
   wrapper.classList.add( 'active');
 });

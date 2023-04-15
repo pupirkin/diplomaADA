@@ -112,7 +112,7 @@
             //   document.addEventListener('DOMContentLoaded', function () {
             //     const verifierElement = getBVComponent();
             //     verifierElement.explorerAPIs = [explorerAPI];
-              
+
 
                 // document
                 // .getElementsByClassName('js-share-credential-btn')[0]
@@ -127,7 +127,7 @@
                 //   const webCredential = await navigator.credentials.get(credentialQuery);
                 //   verifyCredential(webCredential.data);
                 // });
-              
+
 
             //     credentialHandlerPolyfill
             //     .loadOnce()
@@ -221,7 +221,12 @@
                 <li class="header__menu_item"><a href="index.htm" class="header__menu_link header__menu_link--white">Home</a></li>
                 <li class="header__menu_item"><a href="guide/index.htm" class="header__menu_link header__menu_link--white">Technologies</a></li>
                 <li class="header__menu_item"><a href="about.html" class="header__menu_link header__menu_link--white">About</a></li>
-                <li class="header__menu_item"><button href="" id="open" class="hih">Log / Reg</button></li>
+              <!-- <li class="header__menu_item"><button href="" id="open" class="hih">Log / Reg</button></li> -->
+                <li class="header__menu_item">
+                  <button type="button" name="button" class="hih">
+                  <a class="header__menu_link header__menu_link--button header__menu_link--white" >Log / Reg</a>
+                  </button>
+                </li>
               </ul>
               <button type="button" data-menu-index="01" class="header__burger_button js-open-menu header__item--mobile"></button>
 
@@ -229,6 +234,27 @@
           </div>
         </nav>
 
+        <nav data-menu-index="01" class="menu menu--01 js-menu" style="background-color: #29283e;">
+          <div class="menu__container">
+            <button type="button" class="menu__closer js-close-menu">close</button>
+            <div class="menu__box" style="background-color: #29283e;">
+              <ul class="menu__list">
+                <li class="menu__item active"><a href="index.htm" class="menu__link">Home</a></li>
+                <li class="menu__item"><a href="guide/index.htm" class="menu__link">Technologies</a></li>
+                <li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
+                <!-- <li class="menu__item">><button href="" id="open" class="hih">Log / Reg</button></li> -->
+                <li class="header__menu_item">
+
+                  <button type="button" name="button" class="js-close-menu hih1">
+                  <a class="header__menu_link header__menu_link--button header__menu_link--white" style="font-size: 100%;">Log / Reg</a>
+                  </button>
+                </li>
+              </ul>
+              <ul class="social">
+              </ul>
+            </div>
+          </div>
+        </nav>
 
 
 
@@ -423,6 +449,6 @@
 
 
   </body>
-  <div class="js-overlay js-close-navigation js-close-menu overlay"></div>
+  <div class="js-overlay js-close-navigation js-close-menu overlay" style="background: rgba(0, 0, 0, .3);"></div>
 
 </html>
