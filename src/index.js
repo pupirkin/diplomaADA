@@ -1,5 +1,7 @@
  console.log('App working...')
 
+
+ // выползание окошечка лог/рег 
  var wrapper = document.getElementById('wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
@@ -29,3 +31,5 @@ iconClose.addEventListener( 'click', ()=> {
   wrapper.classList.remove( 'active-popup');
   bg.classList.remove( 'active');
 });
+
+// выползание окошечка лог/рег**
