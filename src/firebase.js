@@ -3,7 +3,7 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 
-  import { getAuth, createUserWithEmailAndPassword,   } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword,   } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -26,22 +26,26 @@
   var email =document.getElementById("email")
   var password =document.getElementById("password")
 
+  var signupBtn = document.getElementById("signupinp")
 
 
-  window.signup = function(e){
+
+  signupBtn.addEventListener('click', (e) => {
+      alert('ok')
       e.preventDefault();
       var obj = {
           username:username.value,
           email:email.value,
-          passwords:passwords.value,
+          passwords:password.value,
       }
-      createUserWithEmailAndPassword(auth, obj.username, obj.email, obj.passwords)
+      createUserWithEmailAndPassword(auth, obj.email, obj.passwords)
       .then(function(success){
-          alert("Signup Successfully")
+          console.log(obj);
+          alert("Signup Successfully");
       })
       .catch(function(err){
-          alert("Error" + err)
-      })
-      console.log(obj)
-  }
+          alert("Error" + err);
+      });
+      console.log(obj);
+  })
 // signup **
