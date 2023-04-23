@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/searcher.css">
     <link rel="stylesheet" href="../assets/css/main.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
 
     <title>ADA : Authentication system for academic certificates based on blockchain technology and NFT</title>
 
@@ -93,53 +93,15 @@
             <!-- <script src="node_modules/%40webcomponents/webcomponentsjs/webcomponents-loader.js"></script> -->
             <!-- <script src="node_modules/credential-handler-polyfill/dist/credential-handler-polyfill.min.js"></script> -->
 
-            <script>
-              const explorerAPI = {
-                serviceName: 'etherscan',
-                key: 'FJ3CZWH8PQBV8W5U6JR8TMKAYDHBKQ3B1D',
-                keyPropertyName: 'apikey'
-              };
 
-              function getBVComponent () {
-                return document.querySelectorAll('blockcerts-verifier')[0];
-              }
-
-              function verifyCredential (credential) {
-                const verifier = getBVComponent();
-                verifier.src = credential;
-              }
-
-            //   document.addEventListener('DOMContentLoaded', function () {
-            //     const verifierElement = getBVComponent();
-            //     verifierElement.explorerAPIs = [explorerAPI];
-
-
-                // document
-                // .getElementsByClassName('js-share-credential-btn')[0]
-                // .addEventListener('click', async function () {
-                //   console.log('share credential');
-                //   const credentialQuery = {
-                //     web: {
-                //       VerifiableCredential: true,
-                //       BlockcertsCredential: true
-                //     }
-                //   };
-                //   const webCredential = await navigator.credentials.get(credentialQuery);
-                //   verifyCredential(webCredential.data);
-                // });
-
-
-            //     credentialHandlerPolyfill
-            //     .loadOnce()
-            //     .then(console.log('CHAPI Polyfill loaded.'))
-            //     .catch(e => console.error('Error loading CHAPI polyfill:', e));
-            //   });
-            </script>
   </head>
 
   <body>
     <main class="page_wrapper">
+
+
       <div class="bg-modal">
+
         <div class="wrapper" id="wrapper">
                 <span class="icon-close">
                   <ion-icon name="close"></ion-icon>
@@ -213,6 +175,7 @@
 
 
 
+
         <nav class="header header--01" style="background-color: #29283e;">
           <div class="container header__container">
 
@@ -224,18 +187,56 @@
                 <li class="header__menu_item"><a href="guide/index.htm" class="header__menu_link header__menu_link--white">Technologies</a></li>
                 <li class="header__menu_item"><a href="about.html" class="header__menu_link header__menu_link--white">About</a></li>
               <!-- <li class="header__menu_item"><button href="" id="open" class="hih">Log / Reg</button></li> -->
-                <li class="header__menu_item">
+                <li class="header__menu_item" style="display: none;">
                   <button type="button" name="button" class="hih">
                   <a class="header__menu_link header__menu_link--button header__menu_link--white" >Log / Reg</a>
                   </button>
                 </li>
+                <li class="header__menu_item">
+                  <button class="header__menu_link header__menu_link--white" onclick="toggleMenu()">
+                    <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                  </button>
+                </li>
               </ul>
               <button type="button" data-menu-index="01" class="header__burger_button js-open-menu header__item--mobile"></button>
+              <div class="sub-menu-wrap lol" id="subMenu">
+                <div class="sub-menu">
+                  <div class="user-info">
+                  </div>
+                  <hr>
+                  <button href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                    <p>Edit profile</p>
+
+                    <span>></span>
+                  </button>
+                  <button href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                    <p>Edit profile</p>
+
+                    <span>></span>
+                  </button>
+                  <button href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                    <p>Edit profile</p>
+
+                    <span>></span>
+                  </button>
+                  <button href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                    <p>Certificates</p>
+
+                    <span>></span>
+                  </button>
+
+                </div>
+              </div>
 
             </div>
           </div>
+
         </nav>
-        
+
         <nav data-menu-index="01" class="menu menu--01 js-menu" style="background-color: #29283e;">
           <div class="menu__container">
             <button type="button" class="menu__closer js-close-menu">close</button>
@@ -263,13 +264,12 @@
 
 
 
-        <div class="container" style="position: relative; margin-left: auto; margin-right: auto;">
-          <div style="height:200px;">
+        <div class="container" style="position: relative; margin-left: auto; margin-right: auto; background-color: none; align-item: center;  ">
+          <div style="height:30px;">
 
           </div>
           <!-- Basic Search -->
-          <div class="preview-zone" style="margin-left: auto; margin-right: auto;  width: 700px">
-            <h5>Basic Search</h5>
+          <div class="preview-zone" style="margin-left: auto; margin-right: auto; ">
             <section class="search" role="search">
               <form action="#" method="get" class="search__form" style="height: 100%;">
                 <input id="basic-search" class="search__input" type="search" name="search" maxlength="200" placeholder=" I am looking for..." required />
@@ -280,9 +280,29 @@
               </form>
             </section>
           </div>
-          <div style="height:200px;">
+          <div class="" style="height: 50px;">
 
           </div>
+
+          <div class="content-search">
+
+            <div class="result-search">
+
+              <div class="image-container">
+                <img src="../assets/photo/afASFDV;LAFMJF04-12_14-51-19.png" alt="Avatar" class="image-company" style="display: block;">
+                <div class="link-company">
+                  <a href="#" class="text"></a>
+
+                </div>
+              </div>
+
+              <div class="info-search">
+s
+              </div>
+            </div>
+
+          </div>
+
 
 
 
@@ -302,94 +322,6 @@
           </div>
         </div>
 
-              <div class="features alignc feat1">
-                <div class="container">
-                <div class="col-xs-12">
-                <div class="row">
-                    <h2 style="color: #C5B987">Own and Share Your Achievements</h2>
-                    <span class="subhead" style="color: #ffffff">With the blockchain, your official records are now yours forever. <br>Receive them once, share and verify them for a lifetime.</span>
-                </div>
-
-                <div class="row margin2">
-                    <div class="col-xs-12 col-lg-8 col-lg-push-2">
-                      <a data-fancybox="" href="https://www.youtube.com/embed/5wAyS1e_hOo?rel=0&showinfo=0">
-                        <img src="../assets/img/pictures/image_2023-03-04_14-52-15-transformed.png" style="width: 90%;">
-                      </a>
-                    </div>
-                  </div>
-
-                <div class="row">
-                    <hr style="margin-bottom: 4rem;">
-                    <div class="col-xs-12 col-md-4 col-lg-4 features__item">
-                      <div class="features__item_icon_circle"><span class="number">1</span></div>
-                      <h3 class="features__item_title">Get the Free Blockcerts App</h3><span class="features__item_text">Your private passphrase ensures ownership and aids recovery.</span>
-                    </div>
-                    <div class="col-xs-12 col-md-4 col-lg-4 features__item">
-                      <div class="features__item_icon_circle"><span class="number">2</span></div>
-                      <h3 class="features__item_title">Add Credential Issuers</h3><span class="features__item_text">Add different issuers to your app to receive credentials.</span>
-                    </div>
-                    <div class="col-xs-12 col-md-4 col-lg-4 features__item">
-                      <div class="features__item_icon_circle"><span class="number">3</span></div>
-                      <h3 class="features__item_title">Import and Share</h3><span class="features__item_text">Receive, hold, and share your credentials any time.</span>
-                    </div>
-              </div>
-
-              <!-- <div class="row margin1">
-                <div class="col-lg-8 col-lg-push-2">
-                  <div class="box">
-                  Get the Free Blockcerts App<br>
-                  <div class="app-badges">
-                    <a href="https://itunes.apple.com/us/app/blockcerts-wallet/id1146921514?mt=8" target="_blank" alt="Blockcerts App"><img src="assets/img/pictures/apple.svg" style="height: 40px;"></a>
-                    <a href="https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en" target="_blank" alt="Blockcerts App"><img src="assets/img/pictures/google-play-badge.png" style="width: 153px;"></a>
-                  </div>
-                  </div>
-                </div>
-              </div> -->
-
-
-
-                </div>
-                </div>
-                </div>
-
-
-
-
-                <div class="features features--05">
-
-                  <div class="container">
-          <div class="row">
-            <div class="col-xs-12 col-md-6 col-lg-6 margin1">
-              <div>
-                <h5>CREDENTIAL ISSUERS</h5>
-                <h2>Verify Anyone’s Achievements</h2>
-                <span class="subhead">Use the Blockcerts Universal Verifier to independently verify records. This service can also be built into existing software systems for greater convenience.</span>
-              </div>
-            </div>
-            <div class="col-xs-12 col-md-6 col-lg-6 margin2">
-              <img src="../assets/img/pictures/credential.png" style="width: 100%;">
-            </div>
-          </div>
-        </div>
-                </div>
-
-              <div class="features alignc feat2">
-
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-xs-12 col-lg-8 col-lg-push-2">
-                        <h5>DEVELOPERS</h5>
-                        <h2>The Open Standard for Blockchain Credentials</h2>
-                        <span class="subhead">Build apps that issue and verify blockchain-based records for academic credentials, professional certifications, workforce development, and civic records. The open standard ensures the longevity and interoperability of digital records.</span>
-                      </div>
-                    </div>
-                    <div class="row margin1">
-                      <div class="features__description">
-                        <a href="guide/index.htm" class="button button--border-green" style="margin-right: 16px;">Learn More</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
 
 
 

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Build apps that issue and verify blockchain-based credentials for academic credentials, professional certifications, workforce development, and civic records.">
+  <meta name="author" content="AltairAbylay">
+  <meta charset="utf-8">
+  <meta http-equiv="X-Content-Type-Options" content="'nosniff' always">
+  <!-- <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      connect-src https:;
+      font-src 'self' https://fonts.gstatic.com;
+      frame-src 'self' https://www.youtube.com https://authn.io;
+      img-src 'self' data: https:;
+      object-src data:;
+      form-action 'none';
+      frame-ancestors 'none';
+      child-src 'none';
+      media-src 'none';
+      base-uri 'self';
+      worker-src 'none';
+      manifest-src 'none';
+      prefetch-src 'none';
+      upgrade-insecure-requests;
+      script-src 'self' https://cdnjs.cloudflare.com https://www.google-analytics.com/ code.jquery.com 'unsafe-inline' 'unsafe-eval' 'report-sample';
+      style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline' 'report-sample';
+  "> -->
+  <meta property="og:title" content="Blockchain Credentials">
+  <meta property="og:description" content="Build apps that issue and verify blockchain-based credentials for academic credentials, professional certifications, workforce development, and civic records.">
+  <meta property="og:url" content="http://blockcerts.org/">
+  <meta property="og:site_name" content="ADA">
+  <meta property="article:tag" content="Blockchain Credentials">
+  <meta property="og:image" content="../assets/img/pictures/blockcerts.png">
+
+  <link rel='shortcut icon' href='..assets/img/icons/favicon.ico' type='image/x-icon'>
+  <link rel="stylesheet" href="../assets/css/mycss.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/searcher.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  />
+
+  <title>ADA : Authentication system for academic certificates based on blockchain technology and NFT</title>
+
+  <!--
+
+  <main class="page_wrapper">
+    <nav data-menu-index="01" class="menu menu--01 js-menu" style="background-color: #201e2f;">
+      <div class="menu__container">
+        <button type="button" class="menu__closer js-close-menu">close</button>
+        <div class="menu__box">
+          <ul class="menu__list">
+            <li class="menu__item active"><a href="index.htm" class="menu__link">Home</a></li>
+            <li class="menu__item"><a href="guide/index.htm" class="menu__link">Guide</a></li>
+            <li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
+          </ul>
+          <ul class="social">
+            <li class="social__item social__item--left_margin"><a href="https://twitter.com/Blockcerts" title="Say hello in Twitter!" class="social__link social__link--twitter"></a></li>
+            <li class="social__item social__item--left_margin"><a href="https://www.facebook.com/blockcerts/" title="Say hello in Facebook!" class="social__link social__link--facebook"></a></li>
+            Thanks for checking out the source. If you're looking to host rendered
+            Blockchain Certificates on your own site, here's all you need to do.
+          -->
+          <!-- Step 1: Include the web components polyfill for older browsers. -->
+          <!-- <script src="/components/webcomponentsjs/webcomponents-lite.min.js"></script> -->
+
+          <!-- Step 2: Import whichever web components you'd like to use. -->
+          <!-- This is for <blockchain-certificate> -->
+          <!-- <link rel="import" href="/components/blockchain-certificate/blockchain-certificate.html"> -->
+          <!-- This is for <validate-certificate> -->
+          <!-- <link rel="import" href="/components/blockchain-certificate/validate-certificate.html"> -->
+
+          <!-- Step 3: Use those elements in the body of your HTML. (See below, on web-component.html) -->
+
+          <!-- <script>
+            var on = "font-weight: bold; font-family: monospace; color: #33b17c;"
+            var off = "font-weight: bold; font-family: monospace; color: #082650;"
+            var text = "font-weight: normal, font-family: sans-serif; color: inherit;"
+            var logo = "%c▓▓▓▓%c░░%c▓%c░░%c▓▓▓▓\n"
+            + "%c░░░░░░░░░░░░░\n"
+            + "%c▓%c░░%c▓▓▓▓▓▓▓%c░░%c▓"+"%c       ___ _    ___   ___ _  __           _      \n"
+            + "%c░░░░░░░░░░░░░" +       "%c      | _ ) |  / _ \\ / __| |/ /__ ___ _ _| |_ ___\n"
+            + "%c▓▓%c░░%c▓%c░░%c▓▓▓▓▓▓"+"%c      | _ \\ |_| (_) | (__| ' </ _/ -_) '_|  _(_-<\n"
+            + "%c░░░░░░░░░░░░░"+        "%c      |___/____\\___/ \\___|_|\\_\\__\\___|_|  \\__/__/\n"
+            + "%c▓▓▓▓▓▓▓▓▓▓%c░░%c▓\n"
+            + "%c░░░░░░░░░░░░░\n"
+            + "%c▓▓▓▓▓▓▓%c░░%c▓%c░░%c▓\n"
+            logo += "\n%cThanks for checking out the code! There's plenty more to see at http://github.com/blockchain-certificates. We'd love to have you contribute! ❤️"
+
+            console.log(logo, on, off, on, off, on, off, on, off, on, off, on, off, off, off, on, off, on, off, on, off, off, off, on, off, on, off, on, off, on, off, on, text);
+          </script> -->
+          <!-- <script src="node_modules/%40webcomponents/webcomponentsjs/custom-elements-es5-adapter.js"></script> -->
+          <!-- <script src="node_modules/%40webcomponents/webcomponentsjs/webcomponents-loader.js"></script> -->
+          <!-- <script src="node_modules/credential-handler-polyfill/dist/credential-handler-polyfill.min.js"></script> -->
+
+
+</head>
+
+  <body>
+    <div class="bg-modal" style="display: none">
+      <div class="wrapper" id="wrapper">
+              <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+              </span>
+              <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                  <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                  </div>
+                  <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Passowrd</label>
+                  </div>
+                  <div class="remember-forgot">
+                    <label for=""><input type="checkbox" name="" value="">Remember me</label>
+                    <a href="#">Forgot Password?</a>
+                  </div>
+                  <button type="submit" class="btn" name="button">Login</button>
+                  <div class="login-register">
+                    <p>Dont have an account? <a href="#" class="register-link">Register</a></p>
+                  </div>
+                </form>
+              </div>
+
+
+              <div class="form-box register">
+                <h2>Registration</h2>
+                <form action="#">
+
+                  <div class="input-box">
+                    <span class="icon">
+                      <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required id ="username">
+                    <label>Username</label>
+                  </div>
+
+                  <div class="input-box">
+                    <span class="icon"><ion-icon name="mail"></ion-icon>
+                    </span>
+                    <input type="email" required id="email">
+                    <label>Email</label>
+                  </div>
+
+                  <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                    <input type="password" required id = "password">
+                    <label>Passowrd</label>
+                  </div>
+                  <div class="remember-forgot">
+                    <label for=""><input type="checkbox" name="" value="">I agree to the term & conditions</label>
+                  </div>
+                  <button id="signupinp" class="btn" name="button">Login</button>
+                  <div class="login-register">
+                    <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+      </div>
+    <main class="page_wrapper">
+
+      <nav class="header header--01" style="background-color: #29283e;">
+        <div class="container header__container">
+
+          <div class="header__left_box" style = "font-size: 170%; color:white; padding-right: 30%;">ADA Team</div>
+
+          <div class="header__right_box">
+            <ul class="header__menu_list header__item--desktop">
+              <li class="header__menu_item"><a href="index.htm" class="header__menu_link header__menu_link--white">Home</a></li>
+              <li class="header__menu_item"><a href="guide/index.htm" class="header__menu_link header__menu_link--white">Technologies</a></li>
+              <li class="header__menu_item"><a href="about.html" class="header__menu_link header__menu_link--white">About</a></li>
+            <!-- <li class="header__menu_item"><button href="" id="open" class="hih">Log / Reg</button></li> -->
+              <li class="header__menu_item" style="display: none;">
+                <button type="button" name="button" class="hih">
+                <a class="header__menu_link header__menu_link--button header__menu_link--white" >Log / Reg</a>
+                </button>
+              </li>
+              <li class="header__menu_item">
+                <button class="header__menu_link header__menu_link--white" onclick="toggleMenu()">
+                  <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;"></i>
+                </button>
+              </li>
+            </ul>
+            <button type="button" data-menu-index="01" class="header__burger_button js-open-menu header__item--mobile"></button>
+            <div class="sub-menu-wrap lol" id="subMenu">
+              <div class="sub-menu">
+                <div class="user-info">
+                </div>
+                <hr>
+                <button onclick="document.location='edit.profile.htm'" class="sub-menu-link">
+                  <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                  <p>Edit profile</p>
+
+                  <span>></span>
+                </button>
+                <button onclick="document.location='settingss.html'" class="sub-menu-link">
+                  <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                  <p>Settings</p>
+
+                  <span>></span>
+                </button>
+                <button onclick="document.location='minting.html'" class="sub-menu-link">
+                  <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                  <p>Minting</p>
+
+                  <span>></span>
+                </button>
+                <button onclick="document.location='certificates.html'"class="sub-menu-link">
+                  <i class="fa-solid fa-gear fa-xl" style="color: #8c8c8c;"></i>
+                  <p>Certificates</p>
+
+                  <span>></span>
+                </button>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </nav>
+
+      <nav data-menu-index="01" class="menu menu--01 js-menu" style="background-color: #29283e;">
+        <div class="menu__container">
+          <button type="button" class="menu__closer js-close-menu">close</button>
+          <div class="menu__box" style="background-color: #29283e;">
+            <ul class="menu__list">
+              <li class="menu__item active"><a href="index.htm" class="menu__link">Home</a></li>
+              <li class="menu__item"><a href="guide/index.htm" class="menu__link">Technologies</a></li>
+              <li class="menu__item"><a href="about.html" class="menu__link">About</a></li>
+              <!-- <li class="menu__item">><button href="" id="open" class="hih">Log / Reg</button></li> -->
+              <li class="header__menu_item">
+
+                <button type="button" name="button" class="js-close-menu hih1
+                ">
+                <a class="header__menu_link header__menu_link--button header__menu_link--white" style="font-size: 100%;">Log / Reg</a>
+                </button>
+              </li>
+            </ul>
+            <ul class="social">
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+        <div style="display: none;" id="animatedModal" class="animated-modal">
+                <h2>Get the Free Blockcerts App</h2>
+                <p>
+                  <img src="../assets/img/pictures/blockcerts-mobile.jpg" style="width: 60%;">
+                  <div class="app-badges">
+              <a href="https://itunes.apple.com/us/app/blockcerts-wallet/id1146921514?mt=8" target="_blank" alt="Blockcerts App"><img src="../assets/img/pictures/apple.svg" style="height: 20%;"></a>
+              <a href="https://play.google.com/store/apps/details?id=com.learningmachine.android.app&hl=en" target="_blank" alt="Blockcerts App"><img src="../assets/img/pictures/google-play-badge.png" style="width: 153px;"></a>
+                  </div>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <div class="about about--03">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-12">
+
+
+        <div class="guide-sidebar">
+          <h6>Mintings</h6>
+          <ul>
+            <li><a href="edit.profile.htm">Edit Profile</a></li>
+            <li><a href="settingss.html">Settings</a></li>
+            <li class="active"><a href="minting.html">Minting</a></li>
+            <li><a href="certificates.html">Certificates</a></li>
+          </ul>
+        </div>
+
+
+
+
+      </div>
+      <div class="col-lg-9 col-md-9 col-sm-12 guide-content">
+        <h2 id="quick-start">Minting</h2>
+
+<h3 id="viewing-and-verifying-certificates">Uploading documents</h3>
+
+
+      <div class="drag-area">
+        <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+        <header>Drag & Drop to Upload File</header>
+        <span>OR</span>
+        <button>Browse File</button>
+        <input type="file" hidden>
+      </div>
+
+      <div class="buttSub">
+          
+
+      </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="footer footer--04" style="background-color: #201e2f">
+
+  <div class="footer__main_box--04" style="background-color: #201e2f">
+    <div class="container footer__container"><a href="index.htm" class="footer__logo_box footer__logo_box--04"><img src="assets/img/etc/blockcerts.png" class="footer__logo"></a>
+      <ul class="footer__nav footer__nav--04">
+        <li class="footer__nav__item footer__nav__item--04"><a href="index.htm" class="footer__nav__link footer__nav__link--04">Home</a></li>
+        <li class="footer__nav__item footer__nav__item--04"><a href="guide/index.htm" class="footer__nav__link footer__nav__link--04">Guide</a></li>
+        <li class="footer__nav__item footer__nav__item--04"><a href="about.html" class="footer__nav__link footer__nav__link--04">About</a></li>
+      </ul>
+      <ul class="social footer__social--04 footer__social_box">
+        <li class="social__item social__item--left_margin"><a href="https://twitter.com/younginskrrr" title="Say hello in Twitter!" class="social__link social__link--twitter"></a></li>
+        <li class="social__item social__item--left_margin"><a href="" title="Say hello in Facebook!" class="social__link social__link--facebook"></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- <div class="footer__description_box--04" style="background-color: #201e2f">
+    <div class="container footer__container"><span class="footer__description footer__description--04">The Open Standard for Blockchain Certificates</span><span class="footer__copyright footer__copyright--04"><a href="https://opensource.org/licenses/MIT">Open Source License</a></span></div>
+  </div> -->
+  <div style="width: 100%; height: 5px; background-color: #201e2f">
+
+  </div>
+</footer>
+
+
+
+
+    </main>
+
+
+        <script src="../assets/js/buv-events.js"></script>
+        <script src="../assets/js/main.js" defer=""></script>
+        <script src="../assets/js/searcher.js" defer=""></script>
+    <!-- ======= -->
+        <script src="../assets/js/main.js" defer=""></script>
+    <!-- >>>>>>> 87457235bc0d00386fdb6e406ea7bf645f33eb40 -->
+        <script src="../src/index.js" defer=""></script>
+        <script type = "module" src="../src/firebase.js"></script>
+
+        <script src="../ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js"></script>
+
+
+  </body>
+  <div class="js-overlay js-close-navigation js-close-menu overlay"></div>
+</html>

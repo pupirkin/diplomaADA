@@ -1,80 +1,25 @@
  console.log('App working...')
 
-setInterval(stopCheckingForUpdates, 400);
-
- // setInterval() returns a value that we can use to stop the repeated
- // invocations by calling clearInterval(). (Similarly, setTimeout()
- // returns a value that you can pass to clearTimeout())
- function stopCheckingForUpdates() {
-   if ($(window).width() < 960) {
-
-        var e1 = document.querySelector('.search__input');
-        e1.style.width = "500px";
-
-        var e1 = document.querySelector('.preview-zone');
-        e1.style.width = "600px";
-
-   }
-   else {
-     var e1 = document.querySelector('.search__input');
-     e1.style.width = "600px";
-     var e1 = document.querySelector('.preview-zone');
-     e1.style.width = "700px";
-   }
-
-   if ($(window).width() < 769) {
-
-        var e1 = document.querySelector('.search__form');
-        e1.style.display = "inline-block";
-
-        var e1 = document.querySelector('.preview-zone');
-        e1.style.width = "auto";
-
-        var e1 = document.querySelector('.search__input');
-        e1.style.width = "100%";
-
-        var e1 = document.querySelector('.search__btn-submit');
-        e1.style.width = "100%";
-
-        var e1 = document.querySelector('.probel');
-        e1.style.height = "5px";
-   }
-   else {
-     var e1 = document.querySelector('.search__form');
-     e1.style.display = "flex";
-
-     var e1 = document.querySelector('.preview-zone');
-     e1.style.width = "700px";
-
-     var e1 = document.querySelector('.search__input');
-     e1.style.width = "600px";
-
-     var e1 = document.querySelector('.search__btn-submit');
-     e1.style.width = "80px";
-
-     var e1 = document.querySelector('.probel');
-     e1.style.height = "0px";
-   }
-
- };
-stopCheckingForUpdates();
+let subMenu = document.getElementById("subMenu");
+function toggleMenu() {
+  subMenu.classList.toggle("open-menu")
+  console.log(subMenu)
+}
 
 
 
  // выползание окошечка лог/рег
- var wrapper = document.getElementById('wrapper');
+var wrapper = document.getElementById('wrapper');
 const loginLink = document.querySelector('.login-link');
 const registerLink = document.querySelector('.register-link');
 const bg = document.querySelector('.bg-modal');
 const pw = document.querySelector('.page_wrapper');
 
-console.log(document);
 const btnPopup = document.querySelector('.hih');
 const iconClose = document.querySelector('.icon-close');
 
 const btnPopup1 = document.querySelector('.hih1');
 btnPopup1.addEventListener( 'click', ()=> {
-  console.log("hi");
   wrapper.classList.add( 'active-popup');
   bg.classList.add( 'active');
   pw.classList.add( 'active');
@@ -84,12 +29,12 @@ registerLink.addEventListener( 'click', ()=> {
   wrapper.classList.add( 'active');
 });
 
+
 loginLink.addEventListener( 'click', ()=> {
   wrapper.classList.remove( 'active');
 });
 
 btnPopup.addEventListener( 'click', ()=> {
-  console.log("hi");
   wrapper.classList.add( 'active-popup');
   bg.classList.add( 'active');
   pw.classList.add( 'active');
@@ -99,6 +44,60 @@ iconClose.addEventListener( 'click', ()=> {
   wrapper.classList.remove( 'active-popup');
   bg.classList.remove( 'active');
 });
-
 // выползание окошечка лог/рег**
 
+//selecting all required elements
+const buttSub = document.querySelector(".buttSub");
+const dropArea = document.querySelector(".drag-area"),
+dragText = dropArea.querySelector("header"),
+button = dropArea.querySelector("button"),
+input = dropArea.querySelector("input");
+let file; //this is a global variable and we'll use it inside multiple functions
+
+button.onclick = ()=>{
+  input.click(); //if user click on the button then the input also clicked
+}
+
+input.addEventListener("change", function(){
+  //getting user select file and [0] this means if user select multiple files then we'll select only the first one
+  file = this.files[0];
+  showFile(); //calling function
+});
+
+
+//If user Drag File Over DropArea
+dropArea.addEventListener("dragover", (event)=>{
+  event.preventDefault(); //preventing from default behaviour
+  dragText.textContent = "Release to Upload File";
+});
+
+//If user leave dragged File from DropArea
+dropArea.addEventListener("dragleave", ()=>{
+  dragText.textContent = "Drag & Drop to Upload File";
+});
+
+//If user drop File on DropArea
+dropArea.addEventListener("drop", (event)=>{
+  event.preventDefault(); //preventing from default behaviour
+  //getting user select file and [0] this means if user select multiple files then we'll select only the first one
+  file = event.dataTransfer.files[0];
+  showFile(); //calling function
+});
+
+function showFile(){
+  let fileType = file.type; //getting selected file type
+  let validExtensions = ["application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"]; //adding some valid image extensions in array
+  if(validExtensions.includes(fileType)){ //if user selected file is an image file
+    let fileReader = new FileReader(); //creating new FileReader object
+    let filename = file.name;
+    dropArea.innerHTML = `<div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <header>${filename}</header>`;
+
+
+    buttSub.innerHTML = `<button class="submit" name="button">submit</button>`;
+    }
+  else{
+    alert("This is not an Excel File!");
+    dragText.textContent = "Drag & Drop to Upload File";
+  }
+};

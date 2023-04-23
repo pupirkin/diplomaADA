@@ -9,6 +9,7 @@
  .preview-zone {
 	 padding: 15px;
 	 background-color: rgba(255, 255, 255,0.1);
+   width: 690px;
 }
 /** * Search styles */
  .search__form {
@@ -29,7 +30,6 @@
 	 position: relative;
 }
  .search--icon .search__btn-submit {
-	 position: absolute;
 	 right: 0;
 	 top: 0;
 	 padding: 0;
@@ -123,3 +123,26 @@
  .search__btn-submit:hover {
 	 background-color: rgb(72, 70, 109, 1);
 }
+
+
+
+@media screen and (max-width: 768px) {
+  .preview-zone{
+      width: 100%;
+  }
+
+   .search__form{
+       display: inline-block;
+       width: 100%;
+   }
+
+   .search__input{
+       width: 100%;
+   }
+   .search__btn-submit{
+       width: 100%;
+   }
+   .probel{
+       width: 5px;
+   }
+  }
